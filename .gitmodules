@@ -1,0 +1,3 @@
+[submodule "docker-liferay-6.2"]
+	path = docker-liferay-6.2
+	url = https://github.com/snasello/docker-liferay-6.2.git
