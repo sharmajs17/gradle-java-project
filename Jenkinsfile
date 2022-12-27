@@ -10,7 +10,7 @@ pipeline {
     stage('Docker Build') {
     	agent any
       steps {
-      	sh 'sudo docker build -t java-app .'
+      	sh 'docker build -t java-app .'
       }
     }
 //    stage('Docker Push') {
