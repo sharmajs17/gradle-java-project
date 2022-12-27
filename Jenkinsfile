@@ -9,17 +9,17 @@ pipeline {
  }
     stage('Docker Build') {
       steps {
-	sh 'docker build -t java-app .'
+	sh 'docker build . -t 254456369/java-gradle-repo:v2'
       }
     }
-//    stage('Docker Push') {
-//	agent any
-//      steps {
-//	withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-//	sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-//          sh 'docker push shanem/spring-petclinic:latest'
-//        }
-//      }
-//    }
+    stage('Docker Push') {
+	agent any
+      steps {
+	withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+	sh "docker login -u 254456369 -p dckr_pat_fDmI4Qg0QfGnZnF1jgTtfbFV9HM"
+            sh 'docker push 254456369/java-gradle-repo:v2'  
+	}
+      }
+    }
   }
 }
