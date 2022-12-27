@@ -9,7 +9,7 @@ pipeline {
  }
     stage('Docker Build') {
       steps {
-	sh 'docker build . -t 254456369/java-gradle-repo:v2'
+	sh 'docker build . -t 254456369/java-gradle-repo:v1'
       }
     }
 //    stage('Docker Push') {
