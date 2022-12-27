@@ -15,7 +15,7 @@ pipeline {
     stage('Docker Push') {
 	agent any
       steps {
-	withCredentials([usernamePassword(credentialsId: 'Docker_hub_cred', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+	withCredentials([usernamePassword(credentialsId: 'Docker-cred', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
         	sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
 	      sh 'docker push 254456369/java-gradle-repo:v2'  
 	      
